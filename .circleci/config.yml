@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run: mvn test
-          - codecov/upload
+      - codecov/upload
 
 workflows:
   test:
