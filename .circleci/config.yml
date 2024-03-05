@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  codecov: codecov/codecov@4.0.1
+
 jobs:
   test:
     docker:
@@ -7,22 +10,15 @@ jobs:
     steps:
       - checkout
       - run: mvn test
-
-orbs:
-  codecov: codecov/codecov@4.0.1
+          - codecov/upload
 
 workflows:
-  upload-to-codecov:
-    jobs:
-      - checkout
-      - codecov/upload
   test:
     jobs:
       - test:
         filters:
           branches:
             only: master
-env:
-  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
 
 
