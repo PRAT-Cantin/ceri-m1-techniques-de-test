@@ -59,8 +59,8 @@ public class IPokedexTest {
         Mockito.when(iPokedex.getPokemon(-1)).thenThrow(PokedexException.class);
         assertThrows(PokedexException.class, () -> iPokedex.getPokemon(-1));
         iPokedex.addPokemon(bulbasaur);
-        Pokemon res = iPokedex.getPokemon(0);
         Mockito.when(iPokedex.getPokemon(0)).thenReturn(bulbasaur);
+        Pokemon res = iPokedex.getPokemon(0);
         assertEquals(bulbasaur.getIndex(), res.getIndex());
         assertSame(bulbasaur.getName(), res.getName());
         assertEquals(bulbasaur.getAttack(), res.getAttack());
