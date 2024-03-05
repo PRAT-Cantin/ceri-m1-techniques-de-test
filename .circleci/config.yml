@@ -14,7 +14,6 @@ orbs:
 workflows:
   upload-to-codecov:
     jobs:
-      - checkout
       - codecov/upload
   test:
     jobs:
