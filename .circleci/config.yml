@@ -11,9 +11,8 @@ jobs:
       - checkout
       - run: mvn test
       - store_artifacts:
-        path: target
+          path: target
       - codecov/upload
-
 
 workflows:
   test:
