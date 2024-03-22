@@ -14,13 +14,12 @@ public class IPokemonFactoryTest {
 
     @Before
     public void setUp() throws Exception {
-        iPokemonFactory = Mockito.mock(IPokemonFactory.class);
+        iPokemonFactory = new PokemonFactory();
     }
 
     @Test
-    public void createPokemon() {
-        Pokemon bulbasaur = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000,4,56);
-        Mockito.when(iPokemonFactory.createPokemon(0,613,64,4000,4)).thenReturn(bulbasaur);
+    public void createPokemon() throws PokedexException {
+        Pokemon bulbasaur = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000,4,0);
         Pokemon res = iPokemonFactory.createPokemon(0,613,64,4000,4);
         assertEquals(bulbasaur.getIndex(), res.getIndex());
         assertSame(bulbasaur.getName(), res.getName());
@@ -32,6 +31,5 @@ public class IPokemonFactoryTest {
         assertEquals(bulbasaur.getDust(), res.getDust());
         assertEquals(bulbasaur.getCandy(), res.getCandy());
         assertEquals(bulbasaur.getIv(), res.getIv(), 0.0);
-        Mockito.verify(iPokemonFactory).createPokemon(0,613,64,4000,4);
     }
 }
