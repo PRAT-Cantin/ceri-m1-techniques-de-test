@@ -8,7 +8,6 @@ import org.mockito.Mockito;
 import static org.junit.Assert.*;
 
 public class IPokemonMetadataProviderTest {
-    @Mock
     private IPokemonMetadataProvider iPokemonMetadataProvider;
     private PokemonMetadata bulbasaur;
 

@@ -1,14 +1,16 @@
 package fr.univavignon.pokedex.api;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PokemonMetadataProvider implements IPokemonMetadataProvider {
-    List<PokemonMetadata> pokemons;
+    HashMap<Integer,PokemonMetadata> pokemons;
     public PokemonMetadataProvider() {
-        pokemons = new ArrayList<PokemonMetadata>(151);
-        pokemons.add(new PokemonMetadata(0, "Bulbizarre", 126, 126, 90));
-        pokemons.add(new PokemonMetadata(133, "Aquali", 186, 168, 260));
+        pokemons = new HashMap<>(151);
+        pokemons.put(0,new PokemonMetadata(0, "Bulbizarre", 126, 126, 90));
+        pokemons.put(133,new PokemonMetadata(133, "Aquali", 186, 168, 260));
     }
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
