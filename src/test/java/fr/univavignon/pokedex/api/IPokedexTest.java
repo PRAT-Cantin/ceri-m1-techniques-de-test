@@ -205,4 +205,31 @@ public class IPokedexTest {
         assertEquals(vaporeon.getCandy(), res.get(1).getCandy());
         assertEquals(vaporeon.getIv(), res.get(1).getIv(), 0.0);
     }
+    @Test
+    public void testCreatePokemon() throws PokedexException {
+        Pokemon bulbasaur = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000,4,0);
+        Pokemon res = iPokedex.createPokemon(0,613,64,4000,4);
+        assertEquals(bulbasaur.getIndex(), res.getIndex());
+        assertSame(bulbasaur.getName(), res.getName());
+        assertEquals(bulbasaur.getAttack(),  res.getAttack());
+        assertEquals(bulbasaur.getDefense(), res.getDefense());
+        assertEquals(bulbasaur.getStamina(), res.getStamina());
+        assertEquals(bulbasaur.getCp(), res.getCp());
+        assertEquals(bulbasaur.getHp(), res.getHp());
+        assertEquals(bulbasaur.getDust(), res.getDust());
+        assertEquals(bulbasaur.getCandy(), res.getCandy());
+        assertEquals(bulbasaur.getIv(), res.getIv(), 0.0);
+    }
+
+    @Test
+    public void getPokemonMetadata() throws PokedexException {
+        PokemonMetadata res = iPokedex.getPokemonMetadata(0);
+        assertEquals(bulbasaur.getIndex(), res.getIndex());
+        assertSame(bulbasaur.getName(), res.getName());
+        assertEquals(bulbasaur.getAttack(), res.getAttack());
+        assertEquals(bulbasaur.getDefense(), res.getDefense());
+        assertEquals(bulbasaur.getStamina(), res.getStamina());
+        assertThrows(PokedexException.class, () -> iPokedex.getPokemonMetadata(-1));
+        assertThrows(PokedexException.class, () -> iPokedex.getPokemonMetadata(151));
+    }
 }
