@@ -2,10 +2,7 @@ package fr.univavignon.pokedex.api;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -51,6 +48,7 @@ public class IPokedexTest {
     @Test
     public void testGetPokemon() throws PokedexException {
         assertThrows(PokedexException.class, () -> iPokedex.getPokemon(-1));
+        assertThrows(PokedexException.class, () -> iPokedex.getPokemon(0));
         iPokedex.addPokemon(bulbasaur);
         Pokemon res = iPokedex.getPokemon(0);
         assertEquals(bulbasaur.getIndex(), res.getIndex());
