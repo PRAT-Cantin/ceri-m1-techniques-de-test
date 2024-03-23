@@ -11,7 +11,6 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class IPokedexTest {
-    @Mock
     private IPokedex iPokedex;
     private List<Pokemon> pokemons;
     private Pokemon bulbasaur;

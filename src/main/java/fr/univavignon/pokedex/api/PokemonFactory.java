@@ -1,7 +1,11 @@
 package fr.univavignon.pokedex.api;
 
 public class PokemonFactory implements IPokemonFactory {
-    private PokemonMetadataProvider pokemonMetadataProvider;
+    private IPokemonMetadataProvider pokemonMetadataProvider;
+
+    public PokemonFactory(IPokemonMetadataProvider pokemonMetadataProvider) {
+        this.pokemonMetadataProvider = pokemonMetadataProvider;
+    }
 
     public PokemonFactory() {
         this.pokemonMetadataProvider = new PokemonMetadataProvider();
