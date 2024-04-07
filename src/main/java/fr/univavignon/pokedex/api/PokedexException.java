@@ -1,10 +1,11 @@
 package fr.univavignon.pokedex.api;
 
-/**
- * Custom exception for pokedex related error.
- *
- * @author fv
- */
+ /**
+  * Custom exception for pokedex related error.
+  *
+  * @author fv
+  * @version $Id: $Id
+  */
  public final class PokedexException extends Exception {
 
    /** Serialization index. **/

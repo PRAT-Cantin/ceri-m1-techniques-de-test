@@ -2,8 +2,9 @@ package fr.univavignon.pokedex.api;
 
 /**
  * Trainer POJO.
- * 
+ *
  * @author fv
+ * @version $Id: $Id
  */
 public class PokemonTrainer {
 
@@ -18,7 +19,7 @@ public class PokemonTrainer {
 	
 	/**
 	 * Default constructor.
-	 * 
+	 *
 	 * @param name Trainer name.
 	 * @param team Trainer team.
 	 * @param pokedex Trainer pokedex.
@@ -29,17 +30,29 @@ public class PokemonTrainer {
 		this.pokedex = pokedex;
 	}
 	
-	/** Name getter. **/
+	/**
+	 * Name getter. *
+	 *
+	 * @return a {@link java.lang.String} object
+	 */
 	public String getName() {
 		return name;
 	}
 
-	/** Team getter. **/
+	/**
+	 * Team getter. *
+	 *
+	 * @return a {@link fr.univavignon.pokedex.api.Team} object
+	 */
 	public Team getTeam() {
 		return team;
 	}
 	
-	/** Pokedex getter. **/
+	/**
+	 * Pokedex getter. *
+	 *
+	 * @return a {@link fr.univavignon.pokedex.api.IPokedex} object
+	 */
 	public IPokedex getPokedex() {
 		return pokedex;
 	}

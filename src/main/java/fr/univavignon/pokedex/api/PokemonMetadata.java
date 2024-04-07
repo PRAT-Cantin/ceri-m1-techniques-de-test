@@ -2,8 +2,9 @@ package fr.univavignon.pokedex.api;
 
 /**
  * Pokemon metadata POJO.
- * 
+ *
  * @author fv
+ * @version $Id: $Id
  */
 public class PokemonMetadata {
 
@@ -24,7 +25,7 @@ public class PokemonMetadata {
 
 	/**
 	 * Default constructor.
-	 * 
+	 *
 	 * @param index Pokemon index.
 	 * @param name Pokemon name.
 	 * @param attack Attack level.
@@ -39,27 +40,47 @@ public class PokemonMetadata {
 		this.stamina = stamina;
 	}
 	
-	/** Index getter. **/
+	/**
+	 * Index getter. *
+	 *
+	 * @return a int
+	 */
 	public int getIndex() {
 		return index;
 	}
 	
-	/** Name getter.**/
+	/**
+	 * Name getter.*
+	 *
+	 * @return a {@link java.lang.String} object
+	 */
 	public String getName() {
 		return name;
 	}
 
-	/** Attack level getter. **/
+	/**
+	 * Attack level getter. *
+	 *
+	 * @return a int
+	 */
 	public int getAttack() {
 		return attack;
 	}
 
-	/** Defense level getter. **/
+	/**
+	 * Defense level getter. *
+	 *
+	 * @return a int
+	 */
 	public int getDefense() {
 		return defense;
 	}
 
-	/** Stamina level getter. **/
+	/**
+	 * Stamina level getter. *
+	 *
+	 * @return a int
+	 */
 	public int getStamina() {
 		return stamina;
 	}
