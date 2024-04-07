@@ -7,7 +7,7 @@ package fr.univavignon.pokedex.api;
  */
 public class PokemonMetadata {
 
-	/** Pokemon index. **/
+	/** Pokemon index.  **/
 	private final int index;
 
 	/** Pokemon name. **/
