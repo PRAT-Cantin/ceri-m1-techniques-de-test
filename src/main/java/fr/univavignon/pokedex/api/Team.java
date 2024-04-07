@@ -7,11 +7,17 @@ package fr.univavignon.pokedex.api;
  * @version $Id: $Id
  */
 public enum Team {
-
+	/**
+	 * Team Mystic
+	 */
 	MYSTIC,
-
+	/**
+	 * Team Instinct
+	 */
 	INSTINCT,
-	
+	/**
+	 * Team Valor
+	 */
 	VALOR
 
 }

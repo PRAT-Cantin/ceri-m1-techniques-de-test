@@ -6,7 +6,7 @@ package fr.univavignon.pokedex.api;
  * @author Cantin-PRAT
  * @version $Id: $Id
  */
-public class PokemonTrainerFactory implements IPokemonTrainerFactory{
+public class PokemonTrainerFactory implements IPokemonTrainerFactory {
     /** {@inheritDoc} */
     @Override
     public PokemonTrainer createTrainer(String name, Team team, IPokedexFactory pokedexFactory) {

@@ -9,6 +9,9 @@ import java.util.HashMap;
  * @version $Id: $Id
  */
 public class PokemonMetadataProvider implements IPokemonMetadataProvider {
+    /**
+     * Hashmap linking a pokemon id to its pokemon metadata
+     */
     HashMap<Integer,PokemonMetadata> pokemons;
     /**
      * <p>Constructor for PokemonMetadataProvider.</p>

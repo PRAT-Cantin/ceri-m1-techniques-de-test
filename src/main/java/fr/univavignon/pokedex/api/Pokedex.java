@@ -7,13 +7,21 @@ import java.util.List;
 
 /**
  * <p>Pokedex class.</p>
- *
  * @author Cantin-PRAT
  * @version $Id: $Id
  */
 public class Pokedex implements IPokedex {
+    /**
+     * Pokemons in Pokedex
+     */
     private List<Pokemon> pokemons;
+    /**
+     * Pokemon Metadata Provider of the pokedex
+     */
     private IPokemonMetadataProvider pokemonMetadataProvider;
+    /**
+     * Pokemon Factory of the pokedex
+     */
     private IPokemonFactory pokemonFactory;
 
     /**
@@ -47,7 +55,7 @@ public class Pokedex implements IPokedex {
     @Override
     public int addPokemon(Pokemon pokemon) {
         pokemons.add(pokemon);
-        return pokemons.size()-1;
+        return pokemons.size() - 1;
     }
 
     /** {@inheritDoc} */

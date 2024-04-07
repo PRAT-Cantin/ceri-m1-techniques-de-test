@@ -7,6 +7,9 @@ package fr.univavignon.pokedex.api;
  * @version $Id: $Id
  */
 public class PokemonFactory implements IPokemonFactory {
+    /**
+     * Pokemon Metadata Provider of the PokemonFactory
+     */
     private IPokemonMetadataProvider pokemonMetadataProvider;
 
     /**
