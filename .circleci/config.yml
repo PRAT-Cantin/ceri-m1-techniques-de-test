@@ -11,6 +11,7 @@ jobs:
       - checkout
       - run: mvn checkstyle:check
       - run: mvn test
+      - run: mvn post-site
       - store_artifacts:
           path: target
       - codecov/upload
