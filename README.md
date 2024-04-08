@@ -9,3 +9,4 @@
 - PRAT Cantin
 - Groupe IA Classique
 
+Lien vers la javadoc : https://prat-cantin.github.io/ceri-m1-techniques-de-test/fr/univavignon/pokedex/api/package-summary.html
