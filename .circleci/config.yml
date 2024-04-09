@@ -35,6 +35,12 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g gh-pages@2.0.1
+            git config user.email "ci-build@klukas.net"
+            git config user.name "ci-build"
+      - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist target/site/apidocs
 
