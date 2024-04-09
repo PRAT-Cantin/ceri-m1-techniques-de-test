@@ -23,9 +23,9 @@ jobs:
       - checkout
       - run: mvn javadoc:javadoc
       - store_artifacts:
-        path: target/site/apidocs
+        path: target/apidocs
       - persist_to_workspace:
-          root: target/site
+          root: target
           paths: apidocs
 
   docs-deploy:
@@ -34,7 +34,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: target/site
+          at: target
       - run:
           name: Install and configure dependencies
           command: |
@@ -43,7 +43,7 @@ jobs:
             git config user.name "ci-build"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dist target/site/apidocs
+          command: gh-pages --dist target/apidocs
 
 workflows:
   test:
