@@ -23,9 +23,9 @@ jobs:
       - checkout
       - run: mvn javadoc:javadoc
       - persist_to_workspace:
-          root: target
+          root: .
           paths:
-            - apidocs
+            - target/apidocs
 
   docs-deploy:
     docker:
