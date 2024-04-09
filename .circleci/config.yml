@@ -25,7 +25,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - target/apidocs
+            - target
 
   docs-deploy:
     docker:
