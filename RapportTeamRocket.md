@@ -32,3 +32,6 @@ Ce n'est pas un pokemon à part entière.
 
 Au lieu de gérer les pokemons hors de la map, le pokemon missingno est renvoyé alors qu'il faudrait lancer une exception.
 
+- La javadoc
+
+Le code n'as pas de javadoc ce qui impacte le résultat final du checkstyle
