@@ -33,7 +33,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: target/apidocs
+          at: .
       - run:
           name: Install and configure dependencies
           command: |
