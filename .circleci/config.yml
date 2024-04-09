@@ -54,7 +54,7 @@ workflows:
             only: master
       - docs-build:
           requires:
-            -test
+            - test
           filters:
             branches:
               only: master
