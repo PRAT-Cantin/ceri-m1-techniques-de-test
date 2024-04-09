@@ -23,7 +23,7 @@ jobs:
       - checkout
       - run: mvn javadoc:javadoc
       - store_artifacts:
-        path: target/apidocs
+          path: target/apidocs
       - persist_to_workspace:
           root: target
           paths: apidocs
