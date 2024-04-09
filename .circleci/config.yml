@@ -36,7 +36,7 @@ jobs:
           at: .
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dist target/apidocs
+          command: gh-pages --dist target/site/apidocs
 
 workflows:
   test:
