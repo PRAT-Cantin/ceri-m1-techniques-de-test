@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   codecov: codecov/codecov@4.0.1
+  github-pages: CircleCI-Public/github-pages-orb@1.0.3
 
 jobs:
   test:
@@ -16,6 +17,28 @@ jobs:
           path: target
       - codecov/upload
 
+generate_javadoc:
+  docker:
+    - image: cimg/openjdk:21.0.2-node
+  steps:
+    - checkout
+    - run: mvn javadoc:javadoc
+    - store_artifacts:
+        path: target/site/apidocs
+        when: always
+
+  deploy_javadoc:
+    docker:
+      - image: cimg/openjdk:21.0.2-node
+    steps:
+      - checkout
+      - attach_workspace:
+          at: target/site/apidocs
+      - github-pages/deploy:
+          access_token: $GITHUB_TOKEN
+          branch: gh-pages
+          folder: target/site/apidocs
+
 workflows:
   test:
     jobs:
@@ -23,3 +46,15 @@ workflows:
         filters:
           branches:
             only: master
+      - generate_javadoc:
+          filters:
+            branches:
+              only: master
+          requires:
+            - test
+      - deploy_javadoc:
+          filters:
+            branches:
+              only: master
+          requires:
+            - generate_javadoc
