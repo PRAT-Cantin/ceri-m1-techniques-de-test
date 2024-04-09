@@ -34,6 +34,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
+      - add_ssh_keys:
+          fingerprints:
+            - "HA256:y1SnBocJEyH1MNG19hIpWeS5um0wEtzBE23j14MgkhI"
       - run:
           name: Install and configure dependencies
           command: |
@@ -43,8 +46,6 @@ jobs:
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist target/site/apidocs
-          environment:
-            GITHUB_TOKEN: $GITHUB_TOKEN
 
 workflows:
   test:
