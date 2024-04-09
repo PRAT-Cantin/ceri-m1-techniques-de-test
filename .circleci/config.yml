@@ -38,11 +38,13 @@ jobs:
           name: Install and configure dependencies
           command: |
             npm install -g gh-pages@2.0.1
-            git config user.email "ci-build@klukas.net"
-            git config user.name "ci-build"
+            git config user.email "cantin.prat@alumni.univ-avignon.fr"
+            git config user.name "cantin.prat"
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist target/site/apidocs
+          environment:
+            GITHUB_TOKEN: $GITHUB_TOKEN
 
 workflows:
   test:
