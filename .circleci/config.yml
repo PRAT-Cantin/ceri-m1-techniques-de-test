@@ -22,11 +22,10 @@ jobs:
     steps:
       - checkout
       - run: mvn javadoc:javadoc
-      - store_artifacts:
-          path: target/apidocs
       - persist_to_workspace:
           root: target
-          paths: apidocs
+          paths:
+            - apidocs
 
   docs-deploy:
     docker:
@@ -34,7 +33,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: target
+          at: target/apidocs
       - run:
           name: Install and configure dependencies
           command: |
