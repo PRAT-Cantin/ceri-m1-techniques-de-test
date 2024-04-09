@@ -36,7 +36,7 @@ jobs:
           at: .
       - add_ssh_keys:
           fingerprints:
-            - "HA256:y1SnBocJEyH1MNG19hIpWeS5um0wEtzBE23j14MgkhI"
+            - "SHA256:y1SnBocJEyH1MNG19hIpWeS5um0wEtzBE23j14MgkhI"
       - run:
           name: Install and configure dependencies
           command: |
